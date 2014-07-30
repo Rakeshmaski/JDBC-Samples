@@ -1,0 +1,32 @@
+//Plugin.JSP
+<%@page language="java"%>
+<html>
+  <head>
+    <title></title>
+      </head>
+        <body>
+          <jsp:plugin type="applet" code="ap1.class" codebase="test" width="400" height="400">
+            <jsp:fallback>
+              <h1>unable to load applet</h1>
+            </jsp:fallback>
+        </jsp:plugin>
+    </body>
+</html>
+
+//ap1.java
+
+package test;
+import java.awt.*;
+import java.applet.*;
+
+public class ap1 extends Applet
+{
+    public void init()
+    {
+        setBackground(Color.red);
+    }
+    public void paint(Graphics g)
+    {
+        g.drawString("Hello-Applet", 50, 100);
+    }
+}
